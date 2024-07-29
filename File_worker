@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(){
+    FILE *fh_output;
+
+    fh_output = fopen("io.txt", "w"); //create if !exist
+    fputs("Some text Here!\n", fh_output);
+    fclose(fh_output);
+    
+    return 0;
+}
