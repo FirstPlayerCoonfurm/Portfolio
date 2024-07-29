@@ -1,12 +1,42 @@
-#include <iostream>
+#include <stdio.h>
 
-int f(int x) { return 16*(9-x)*(9-x)+127; }
 int main(){
-    int a = -10, b = 10, p = 130, n = 0, t;
-    for(t = a; t <= b; t++){
-        if(f(t)>p)
-        n++;
-        printf("%d\n", n);
+    char oper;
+    double num_a;
+    double num_b;
+    double res;
+
+    printf("\nEnter an operator (+; -: *; /;)");\
+    scanf("%c", &oper);
+    
+    printf("Enter num 1: ");
+    scanf("%lf", &num_a);
+
+    printf("Enter num 2: ");
+    scanf("%lf", &num_b);
+
+    switch(oper){
+        default:
+        printf("%c is not valid", oper);
+
+        case '+':
+        res = num_a + num_b;
+        printf("\nresult: %lf", res);
+        break;
+
+        case '-':
+        res = num_a - num_b;
+        printf("\nresult: %lf", res);
+        break;
+
+        case '*':
+        res = num_a * num_b;
+        printf("\nresult: %lf", res);
+        break;
+
+        case '/':
+        res = num_a / num_b;
+        printf("\nresult: %lf", res);
+        break;
     }
-    return 0;
 }
